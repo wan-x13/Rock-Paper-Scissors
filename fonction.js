@@ -1,4 +1,8 @@
 
+import { currentLogoComputer , currentLogoPlayer, form, input,scoreComputer,scorePlayer} from './constants';
+import  {userPlayer , card} from './constants';
+
+
 let playerScore = 0;
 let computerScore = 0;
 let response;
