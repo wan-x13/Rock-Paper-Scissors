@@ -30,7 +30,7 @@ const computerSelection = computerPlay();
 
   for(let i = 0; i<5 && response !== 'N'; i++){
 
-  response = prompt('voulez vous jouer ? oui ou non (O/N') ;
+  // response = prompt('voulez vous jouer ? oui ou non (O/N') ;
   
 
     let result = playRound(player , computerSelection);
