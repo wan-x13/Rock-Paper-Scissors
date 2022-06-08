@@ -12,11 +12,15 @@ const homePage = document.querySelector(".homePage");
 const gamePage = document.querySelector(".game");
 const image = document.querySelectorAll("img");
 const titleScore = document.querySelector(".titleScore > h2")
+const imageWinner = document.querySelector('.imageWinner')
+const resultName = document.querySelector(".resultName")
+const resultPage = document.querySelector(".resultPage");
 
 
 let playerScore = 0;
 let computerScore = 0;
 let response;
+let userName ;
 
 form.addEventListener("submit", function(e){
 
@@ -34,6 +38,8 @@ form.addEventListener("submit", function(e){
   else {
     input.classList.add("valid")
     input.nextElementSibling.innerText = "";
+    userName = input.value;
+
     homePage.style.display = "none";
     gamePage.style.display = "block";
 
@@ -108,14 +114,30 @@ const playRound  = function(e){
   }
 
 }
+
+
 const getWinner = (a,b)=>{
+ 
+  let result
   if(a==5){
+   
+
+    gamePage.style.display = "none"
+    resultPage.style.display = "flex"
+  
+     result = `${userName} win`
+     resultName.innerText = result;
 
 
   }
-  else{
+  if(b==5){
+    gamePage.style.display = "none"
+    resultPage.style.display = "flex"
 
+    result = `computer win`
+    resultName.innerText = result;
   }
+
   
 
 }
@@ -138,6 +160,9 @@ const game = function (e){
     titleScore.style.fontSize = "35px"
 
   }
+ getWinner(playerScore, computerScore);
+  
+
 }
 
 
