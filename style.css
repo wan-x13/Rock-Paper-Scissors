@@ -215,3 +215,17 @@ button:hover{
     font-size: 45px;
 
 }
+.imageWinner{
+
+    width: 30%;
+}
+.resultImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.hidden{
+
+    display: none;
+}
