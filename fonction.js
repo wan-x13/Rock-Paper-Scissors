@@ -99,13 +99,9 @@ const playRound  = function(e){
   if(imageAttr == 'Paper' && computerSelection == 'Rock'
   || imageAttr == 'Rock' && computerSelection == 'Scissor'
   || imageAttr == 'Scissor' && computerSelection == 'Paper'){
-
      updateChoice(imageAttr, computerSelection);
-
-
-
       return 'player';
-      
+  
   }
   else {
 
@@ -115,17 +111,16 @@ const playRound  = function(e){
 
 }
 
-
 const getWinner = (a,b)=>{
  
   let result
   if(a==5){
    
-
     gamePage.style.display = "none"
     resultPage.style.display = "flex"
   
      result = `${userName} win`
+     imageWinner.src = "iconHuman.png"
      resultName.innerText = result;
 
 
@@ -135,13 +130,10 @@ const getWinner = (a,b)=>{
     resultPage.style.display = "flex"
 
     result = `computer win`
+    imageWinner.src = "robot.png"
     resultName.innerText = result;
   }
-
-  
-
 }
-
 const game = function (e){
   let response = playRound(e);
   if(response === "player"){
@@ -158,11 +150,8 @@ const game = function (e){
     titleScore.innerText = response;
     titleScore.style.color = "red";
     titleScore.style.fontSize = "35px"
-
   }
  getWinner(playerScore, computerScore);
-  
-
 }
 
 
